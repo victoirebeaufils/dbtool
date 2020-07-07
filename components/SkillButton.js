@@ -1,11 +1,16 @@
 import React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
-const SkillButton = (props) => {
 
+  
+const SkillButton = (props) => {
+    const link = props.navigationPage;
+    console.log(link);
     return(
         <View>
-            <TouchableOpacity style={[styles.button,{backgroundColor: props.backgroundColor}]}>
-                <Text style= {styles.buttonText}>{props.text}</Text>
+            <TouchableOpacity style={[styles.button,{backgroundColor: props.backgroundColor}]}
+             onPress={() => props.navigation.navigate(link)}>
+                <Text style= {[styles.buttonText, {color: props.titleColor}]} >{props.text}</Text>
+                {props.description ? <Text style={[styles.buttonDescription, {color: props.color}]}>{props.description}</Text>: null}
             </TouchableOpacity>
         </View>
     )
@@ -27,7 +32,13 @@ const styles = StyleSheet.create({
          
     },
     buttonText: {
-        fontSize:20
+        fontSize:20,
+        color: 'white',
+    },
+    buttonDescription: {
+        fontSize: 13,
+        fontWeight: "700",
+        color:'white'
     }
 
 

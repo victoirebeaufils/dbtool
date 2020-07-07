@@ -7,6 +7,7 @@ import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
   return (
+    
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
      
@@ -57,9 +58,15 @@ export default function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
-  header: null,
-};
+HomeScreen.navigationOptions = ({ navigation }) => {
+   return {
+      title: 'Screen Title',
+      headerTintColor: 'royalblue',
+      headerStyle: {
+         backgroundColor: '#fff'
+      }
+   }
+}
 
 function DevelopmentModeNotice() {
   if (__DEV__) {

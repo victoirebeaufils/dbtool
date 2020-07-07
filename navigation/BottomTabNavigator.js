@@ -15,15 +15,16 @@ export default function BottomTabNavigator({ navigation, route }) {
   // currently active tab. Learn more in the documentation:
   // https://reactnavigation.org/docs/en/screen-options-resolution.html
   //navigation.setOptions({ headerTitle: getHeaderTitle(route) });
+  //initialRouteName={INITIAL_ROUTE_NAME}
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator > 
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused }) => <Feather name="home" size={24} color="black" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="home" color="blue" type="feather" />,
         }}
       />
       <BottomTab.Screen
@@ -31,7 +32,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={SearchScreen}
         options={{
           title: 'Search',
-          tabBarIcon: ({ focused }) => <Feather name="search" size={24} color="black" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="search" size={24} color="black" type="feather" />,
         }}
       />
        <BottomTab.Screen
@@ -39,7 +40,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={DiaryScreen}
         options={{
           title: 'Diary',
-          tabBarIcon: ({ focused }) => <FontAwesome name="book" size={24} color="black" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon name="book" size={24} color="black" type="fontawesome"/>,
         }}
       />
          <BottomTab.Screen
@@ -47,7 +48,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={ProfileScreen}
         options={{
           title: 'Profile',
-          tabBarIcon: ({ focused }) =><Octicons name="person" size={24} color="black" />,
+          tabBarIcon: ({ focused }) =><TabBarIcon name="person" size={24} color="black" type="octicons" />,
         }}
       />
     </BottomTab.Navigator>
