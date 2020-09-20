@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import DiaryScreen from '../screens/DiaryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import DiaryCardFormScreen from '../screens/DiaryCard/DiaryCardFormScreen'
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -37,7 +38,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
        <BottomTab.Screen
         name="Diary"
-        component={DiaryScreen}
+        component={DiaryCardFormScreen}
         options={{
           title: 'Diary',
           tabBarIcon: ({ focused }) => <TabBarIcon name="book" size={24} color="black" type="fontawesome"/>,

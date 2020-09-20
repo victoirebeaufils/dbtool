@@ -8,7 +8,7 @@ export default function AcronymCards(props) {
       <Text style={styles.title}>{props.action ? <Text>{props.action}</Text> : ""}<Text style={styles.acronym}>{props.acronym}</Text></Text>
       {props.description ? <Text style={styles.paragraph}>{props.description}
       </Text> : null}
-
+      {props.children }
       {props.image ? props.image == "placeholder" ?
         <Image style={styles.images}
           source={require('../assets/images/icon.png')
@@ -17,7 +17,7 @@ export default function AcronymCards(props) {
         : null}
       {props.reflection ?
         <React.Fragment>
-          <Text style={styles.title}>Reflect</Text>
+          {props.reflectionHeader?<Text style={styles.title}>Reflect</Text>: null}
           <View style={styles.bubble}>
 
             <Text style={styles.paragraph}>{props.reflection}</Text>
@@ -25,7 +25,7 @@ export default function AcronymCards(props) {
           </View>
         </React.Fragment>
         : null}
-        {props.children }
+       
     </Card>
   )
 }
@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F5F5",
     padding: 15,
     paddingHorizontal: 25,
-    borderRadius: 20
+    borderRadius: 20,
+    marginTop:10,
   }
 
 })

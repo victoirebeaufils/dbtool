@@ -28,7 +28,8 @@
     "web": {
       "favicon": "./assets/images/favicon.png"
     },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "sdkVersion": "38.0.0"
   },
   "displayName": "DBTool",
   "name": "DBTool"

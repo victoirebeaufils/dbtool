@@ -49,6 +49,9 @@ import FASTScreen from './screens/InterpersonalEffectiveness/FASTScreen';
 import GIVEScreen from './screens/InterpersonalEffectiveness/GIVEScreen';
 import StoryOfEmotionScreen from './screens/EmotionRegulation/StoryOfEmotionScreen';
 
+import DiaryCardFormScreen from './screens/DiaryCard/DiaryCardFormScreen'
+
+
 const Stack = createStackNavigator();
 
 export default function App(props) {
@@ -279,6 +282,12 @@ export default function App(props) {
              color: '#DFF0F6'
              },
              headerTintColor: '#DFF0F6',
+              }}/>
+              <Stack.Screen name="Diary Card" component={DiaryCardFormScreen}
+              options={{headerStyle:{backgroundColor: "#FF7E51"},  headerTitleStyle: {
+                color: '#FEFCE0'
+                },
+                headerTintColor: '#FEFCE0'
               }}/>
           </Stack.Navigator>
         </NavigationContainer>
